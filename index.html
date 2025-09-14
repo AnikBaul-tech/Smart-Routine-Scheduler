@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Side Navbar</title>
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <body>
-  
+  <!-- Navbar  -->
+
+  <div class="menu-toggle">
+    <i class="fas fa-ellipsis-v"></i>
+  </div>
+
+  <div class="sidebar">
+    <h2>MyPanel</h2>
+    <a href="#">Dashboard</a>
+    <div class="study">
+       <h4>Studies</h4>
+       <a href="#"><i class="fas fa-list"></i> Subjects</a>
+       <a href="#"><i class="fas fa-graduation-cap"></i> Classes</a>
+   </div>
+   <div class="roles">
+     <h4>People</h4>
+     <a href="#"><i class="fas fa-user-graduate"></i><span>Students</span></a>
+     <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Teachers</span></a>
+   </div>
+   <div>
+    <h4>Tools</h4>
+    <a href="#">Timetable</a> 
+    <a href="#">Attendance</a>
+   </div>
+  </div>
+ <!-- Navbar ends -->
+  <div class="content">
+    <h4>Class schedule</h4>
+  </div>
+  <script src="test.js"></script>
 </body>
 </html>
