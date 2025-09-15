@@ -10,34 +10,88 @@
 </head>
 <body>
   <!-- Navbar  -->
+<div class="menu-toggle">
+  <i class="fas fa-ellipsis-v"></i>
+</div>
 
-  <div class="menu-toggle">
-    <i class="fas fa-ellipsis-v"></i>
+<div class="sidebar">
+  <h2>MyPanel</h2>
+  <a href="index.html">Dashboard</a>
+  <div class="study">
+      <h4>Studies</h4>
+      <a href="#"><i class="fas fa-list"></i> Subjects</a>
+      <a href="#"><i class="fas fa-graduation-cap"></i> Classes</a>
   </div>
-
-  <div class="sidebar">
-    <h2>MyPanel</h2>
-    <a href="#">Dashboard</a>
-    <div class="study">
-       <h4>Studies</h4>
-       <a href="#"><i class="fas fa-list"></i> Subjects</a>
-       <a href="#"><i class="fas fa-graduation-cap"></i> Classes</a>
-   </div>
-   <div class="roles">
-     <h4>People</h4>
-     <a href="#"><i class="fas fa-user-graduate"></i><span>Students</span></a>
-     <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Teachers</span></a>
-   </div>
-   <div>
-    <h4>Tools</h4>
-    <a href="#">Timetable</a> 
-    <a href="#">Attendance</a>
-   </div>
+  <div class="roles">
+    <h4>People</h4>
+    <a href="#"><i class="fas fa-user-graduate"></i><span>Students</span></a>
+    <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Teachers</span></a>
   </div>
+  <div>
+  <h4>Tools</h4>
+  <a href="#">Timetable</a> 
+  <a href="#">Attendance</a>
+  </div>
+</div>
  <!-- Navbar ends -->
+  <!-- <div class="main-content">
+    Class schedule
+    <div class="session-details box"></div>
+    <div class="session-details1 box"></div>
+    <div class="session-details2 box"></div>
+    <div class="session-details3 box"></div>
+  </div> -->
   <div class="main-content">
-    <h4>Class schedule</h4>
+  <h2 class="section-title">Today's Class Schedule</h2>
+
+  <div class="card" id="session-details">
+    <h3 class="card-title">Session Details</h3>
+    <div class="details">
+      <span>Session <span class="semi_detail" id="session-year">24-25</span></span>
+      <span>Time Span <span class="semi_detail" id="semester-span">Aug-Dec</span></span>
+      <span>Semester <span class="semi_detail" id="sem">3</span></span>
+      <span>Duration <span class="semi_detail" id="duration">5 months</span></span>
+    </div>
+    <div class="details">
+      <div class="progress-container">
+        <svg viewBox="0 0 250 125">
+          <!-- Background top arc -->
+          <path d="M20,125 A105,105 0 0,1 230,125"
+                class="progress-bg" />
+          <!-- Progress arc -->
+          <path d="M20,125 A105,105 0 0,1 230,125"
+                class="progress-bar" />
+        </svg>
+        <div class="progress-text" id="progress-text">0%</div>
+      </div>
+    </div>
+    <div class="details">
+      <span><span class="semi_detail" id="subject_count">5</span> Subjects</span>
+      <span><span class="semi_detail" id="duration">3</span> Classes Today</span>
+    </div>
   </div>
+
+  <div class="card">
+    <h3 class="card-title">Ask your doubts</h3>
+    <div class="session-details1 box"></div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Subjects for this session</h3>
+    <div class="session-details2 box"></div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Attendance History</h3>
+    <div class="session-details3 box"></div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">New Updates</h3>
+    <div class="session-details3 box"></div>
+  </div>
+</div>
+
   <script src="test.js"></script>
 </body>
 </html>
