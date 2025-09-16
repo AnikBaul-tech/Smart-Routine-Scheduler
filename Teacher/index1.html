@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style1.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+  <!-- Navbar  -->
+
+  <div class="menu-toggle">
+    <i class="fas fa-ellipsis-v"></i>
+  </div>
+
+<div class="sidebar">
+  <h2>MyPanel</h2>
+  <a href="index1.html">Dashboard</a>
+  <div class="study">
+      <h4>Studies</h4>
+      <a href="./Subjects/index.html"><i class="fas fa-list"></i> Subject Code</a>
+      <a href="#"><i class="fas fa-graduation-cap"></i> Classes</a>
+  </div>
+  <div class="roles">
+    <h4>People</h4>
+    <a href="#"><i class="fas fa-user-graduate"></i><span>Students</span></a>
+    <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Teachers</span></a>
+  </div>
+  <div>
+  <h4>Tools</h4>
+  <a href="./Schedule/timetable.html">Timetable</a> 
+  <a href="#">Attendance</a>
+  </div>
+</div>
+ <!-- Navbar ends -->
+  <!-- <div class="main-content">
+    Class schedule
+    <div class="session-details box"></div>
+    <div class="session-details1 box"></div>
+    <div class="session-details2 box"></div>
+    <div class="session-details3 box"></div>
+  </div> -->
+  <div class="main-content">
+  <h2 class="section-title">Today's Class Schedule</h2>
+
+  <div class="card" id="session-details">
+    <h3 class="card-title">Session Details</h3>
+    <div class="details">
+      <span class="fsizing">Session <span class="focused-text content-text-red" id="session-year">24-25</span></span>
+      <span class="fsizing">Time Span <span class="focused-text content-text-smooth_red" id="semester-span">Aug-Dec</span></span>
+      <span class="fsizing">Semester <span class="focused-text content-text-blue" id="sem">3</span></span>
+      <span class="fsizing">Duration <span class="focused-text content-text-classic_blue" id="duration">5 months</span></span>
+    </div>
+    <div class="details">
+      <div class="progress-container">
+        <svg viewBox="0 0 250 125">
+          <!-- Background top arc -->
+          <path d="M20,125 A105,105 0 0,1 230,125"
+                class="progress-bg" />
+          <!-- Progress arc -->
+          <path d="M20,125 A105,105 0 0,1 230,125"
+                class="progress-bar" />
+        </svg>
+        <div class="progress-text" id="progress-text">0%</div>
+      </div>
+    </div>
+    <div class="details">
+      <span class="fsizing"><span class="focused-text content-text-green" id="subject_count">5</span> Subjects</span>
+      <span class="fsizing"><span class="focused-text content-text-classic_blue" id="class_numbers">3</span> Classes Today</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Check Students Questions</h3>
+    <div class="message-container">
+    <div class="nav left" onclick="prevMessage()">&lt;</div>
+    <div class="nav right" onclick="nextMessage()">&gt;</div>
+    <div class="student-info" id="studentInfo"></div>
+    <div class="message-text" id="messageText">
+      
+    </div>
+  </div>
+    <script>
+    const messages = [
+      {
+        name: "Shilpi Das",
+        dept: "CSE",
+        text: "Ma'am regarding the previous assignments I have some of the problems and so I want to meet you if you have any free time I can contact you please inform me Ma'am. If you will inform I will be thankful to you."
+      },
+      {
+        name: "Ravi Kumar",
+        dept: "ECE",
+        text: "Ma'am I missed the last lecture due to illness. Could you please share the notes or guide me on what topics were covered?"
+      },
+      {
+        name: "Ananya Roy",
+        dept: "IT",
+        text: "Ma'am I submitted the assignment but forgot to attach the code file. Can I resend it now?"
+      }
+    ];
+
+    let index = 0;
+
+    function updateMessage() {
+      const info = document.getElementById("studentInfo");
+      const text = document.getElementById("messageText");
+      info.innerHTML = `Message from ${messages[index].name}<br>From ${messages[index].dept}`;
+      text.textContent = messages[index].text;
+    }
+
+    function nextMessage() {
+      index = (index + 1) % messages.length;
+      updateMessage();
+    }
+
+    function prevMessage() {
+      index = (index - 1 + messages.length) % messages.length;
+      updateMessage();
+    }
+
+    updateMessage(); // Initial load
+  </script>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Events And Exams</h3>
+    <div class="container1 classic_blue">
+      <div class="events">
+         <div>
+            <h3 class="head">Upcoming Events</h3>
+         </div>
+         <div class="rest">
+            <li>Biswakarma Puja</li>
+            <li>Swagatam</li>
+            <li>Freshers Welcome</li>
+            <li>Agomoni Event</li>
+            <li>Dandiya Night</li>
+            <li>JIS Spirit</li>
+         </div>
+      </div>
+      <div class="exam">
+        <div>
+            <h3 class="head">Upcoming Exams</h3>
+        </div>
+        <div class="rest">
+           <li>Slot Test-1</li>
+           <li>Slot Test-2</li>
+           <li>Mock Viva</li>
+           <li>First Year Slot-1</li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">Working Days</h3>
+    <div class="attendance">
+      <div class="attendance-details">
+        <span class="fsizing">Total Working Days This Month :- <span class="focused-text content-text-classic_blue" id="total_days">20</span></span>
+        <span class="fsizing">Remaining Working Days :- <span class="focused-text content-text-green" id="attended_days">10</span></span>
+      </div>
+      <div class="attendance-details">
+        <div class="attendance_progress-container">
+          <div class="attendance_progress-bar" id="progress-bar"></div>
+          <div class="threshold"></div>
+          <div class="attendance-progress-text focused-text" id="progress-text">0%</div>
+        </div>
+      </div>
+      <div class="attendance-details">
+        <span class="focused-text content-text-blue">Attendance Percentage</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">New Updates</h3>
+    <div class="update">
+      <div class="update-text">
+        <span class="fsizing content-text-green">No New Updates</span>
+      </div>
+      <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+  <script src="test1.js"></script>
+</body>
+</html>
