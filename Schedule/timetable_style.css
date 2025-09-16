@@ -1,0 +1,55 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f8f9fa;
+    padding: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.timetable {
+    display: grid;
+    grid-template-columns: 120px repeat(5, 1fr); /* Time + 5 days */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    background: #2c3e50;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.time {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 15px 5px;
+    font-weight: bold;
+    border-right: 1px solid #ddd;
+}
+
+.slot {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-top: none;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-collapse: collapse;
+}
+
+/* Subject colors */
+.math { background: #ffefc2; }
+.physics { background: #c2f0ff; }
+.cs { background: #c2ffc2; }
+.english { background: #f7c2ff; }
+.break { background: #eee; font-weight: bold; color: #444; }

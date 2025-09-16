@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batch Timetable</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f8f9fa;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .timetable {
+      display: grid;
+      grid-template-columns: 120px repeat(5, 1fr); /* Time + 5 days */
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #2c3e50;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .time {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 15px 5px;
+      font-weight: bold;
+      border-right: 1px solid #ddd;
+    }
+
+    .slot {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      border-top: none;
+      border-left: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-collapse: collapse;
+    }
+
+    /* Subject colors */
+    .math { background: #ffefc2; }
+    .physics { background: #c2f0ff; }
+    .cs { background: #c2ffc2; }
+    .english { background: #f7c2ff; }
+    .break { background: #eee; font-weight: bold; color: #444; }
+  </style>
+</head>
+<body>
+
+  <h2>Batch Timetable</h2>
+  
+  <div class="timetable">
+    <!-- Header -->
+    <div class="header">Time</div>
+    <div class="header">Mon</div>
+    <div class="header">Tue</div>
+    <div class="header">Wed</div>
+    <div class="header">Thu</div>
+    <div class="header">Fri</div>
+
+    <!-- Row 1 -->
+    <div class="time">9:00 - 10:00</div>
+    <div class="slot math">MTH101<br>Room 201<br>Dr. Sharma</div>
+    <div class="slot physics">PHY102<br>Room 105<br>Prof. Mehta</div>
+    <div class="slot english">ENG201<br>Room 110<br>Dr. Roy</div>
+    <div class="slot cs">CS101<br>Lab 01<br>Mr. Singh</div>
+    <div class="slot math">MTH101<br>Room 201<br>Dr. Sharma</div>
+
+    <!-- Row 2 -->
+    <div class="time">10:00 - 11:00</div>
+    <div class="slot physics">PHY102<br>Room 105<br>Prof. Mehta</div>
+    <div class="slot cs">CS101<br>Lab 01<br>Mr. Singh</div>
+    <div class="slot math">MTH101<br>Room 201<br>Dr. Sharma</div>
+    <div class="slot english">ENG201<br>Room 110<br>Dr. Roy</div>
+    <div class="slot cs">CS101<br>Lab 01<br>Mr. Singh</div>
+
+    <!-- Row 3 (Break) -->
+    <div class="time">11:00 - 11:15</div>
+    <div class="slot break" colspan="5">Break</div>
+    <div class="slot break">Break</div>
+    <div class="slot break">Break</div>
+    <div class="slot break">Break</div>
+    <div class="slot break">Break</div>
+
+    <!-- Row 4 -->
+    <div class="time">11:15 - 12:15</div>
+    <div class="slot cs">CS101<br>Lab 01<br>Mr. Singh</div>
+    <div class="slot english">ENG201<br>Room 110<br>Dr. Roy</div>
+    <div class="slot physics">PHY102<br>Room 105<br>Prof. Mehta</div>
+    <div class="slot math">MTH101<br>Room 201<br>Dr. Sharma</div>
+    <div class="slot english">ENG201<br>Room 110<br>Dr. Roy</div>
+  </div>
+
+</body>
+</html>

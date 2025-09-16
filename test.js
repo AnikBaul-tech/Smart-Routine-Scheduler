@@ -18,7 +18,7 @@ const toggle = document.querySelector('.menu-toggle');
 function setProgress(percent) {
     const arcLength = 330; // measured arc length
     const progressBar = document.querySelector(".progress-bar");
-    const text = document.getElementById("progress-text");
+    const text = document.querySelector(".progress-text");
 
     // progress from left → right
     const offset = arcLength - (arcLength * percent / 100);
