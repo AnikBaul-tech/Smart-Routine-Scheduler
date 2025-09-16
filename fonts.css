@@ -1,0 +1,45 @@
+:root{
+  --accent_nav: #2c3e50;
+  --accent_nav_hover: #34495e;
+  --nav_text: white;
+  --card_shadow: rgba(0,0,0,0.1);
+  --green: rgb(0, 145, 84);
+  --red: #e12e0e;
+  --smooth_red: orangered;
+  --classic_blue: rgb(7, 104, 104);
+  --inside_card_shadow: rgba(0,0,0,0.08);
+  --inside_card_shadow_hover: rgba(0,0,0,0.20);
+}
+
+/* Texts inside the cards */
+.fsizing{
+  font-size: 16px;
+  font-weight: 700;
+}
+.fsizing-thin{
+  font-size: 16px;
+  font-weight: 400;
+}
+.focused-text{
+  font-size: 18px;
+  font-weight: 700;
+}
+.content-text-green{
+  color: var(--green);
+}
+.content-text-blue{
+  color: var(--accent_nav);
+}
+.content-text-blue_hover{
+  color: var(--accent_nav_hover);
+}
+.content-text-red{
+  color: var(--red);
+}
+.content-text-smooth_red{
+  color: var(--smooth_red);
+}
+.content-text-classic_blue{
+  color: var(--classic_blue);
+}
+/* Texts completed */

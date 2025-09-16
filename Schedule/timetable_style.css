@@ -1,5 +1,4 @@
 body {
-    font-family: "Segoe UI", sans-serif;
     background: #f8f9fa;
     padding: 30px;
 }
@@ -53,3 +52,18 @@ h2 {
 .cs { background: #c2ffc2; }
 .english { background: #f7c2ff; }
 .break { background: #eee; font-weight: bold; color: #444; }
+
+@media (max-width: 768px) {
+  .timetable {
+    display: grid;
+    grid-template-columns: 100px repeat(5, minmax(120px, 1fr));
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .header, .time, .slot {
+    font-size: 13px;
+    padding: 8px;
+    min-width: 100px;
+  }
+}

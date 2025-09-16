@@ -22,42 +22,8 @@ html,body{
 }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   display: flex;
 }
-
-/* Texts inside the cards */
-.fsizing{
-  font-size: 16px;
-  font-weight: 700;
-}
-.fsizing-thin{
-  font-size: 16px;
-  font-weight: 400;
-}
-.focused-text{
-  font-size: 18px;
-  font-weight: 700;
-}
-.content-text-green{
-  color: var(--green);
-}
-.content-text-blue{
-  color: var(--accent_nav);
-}
-.content-text-blue_hover{
-  color: var(--accent_nav_hover);
-}
-.content-text-red{
-  color: var(--red);
-}
-.content-text-smooth_red{
-  color: var(--smooth_red);
-}
-.content-text-classic_blue{
-  color: var(--classic_blue);
-}
-/* Texts completed */
 
 /* Sidebar */
 .sidebar {

@@ -1,39 +1,39 @@
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 50px 100px;
-    background: whitesmoke;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: whitesmoke;
 }
 
 .subjects-page {
   padding: 20px;
+  width: 100%;
   max-width: 900px;
-  margin: auto;
   background: white;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 5px 20px black;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
-
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin-top: 16px;
 }
 
 .subject-card {
-  width: 400px;
   background-color: #f5f5f5;
   border-radius: 6px;
-  padding: 10px 14px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 12px 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease;
 }
+
 
 .subject-card:hover {
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
@@ -47,4 +47,65 @@ body{
   margin: 0;
   font-size: 14px;
   color: #555;
+}
+
+.syllabus_progress {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  aspect-ratio: 2 / 1;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+
+.progress-bg {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 20;
+}
+
+.progress-bar {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-dasharray: 330; /* arc length */
+  stroke-dashoffset: 330; /* hidden initially */
+  transition: stroke-dashoffset 1.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .fsizing {
+    font-size: 14px;
+  }
+
+  .fsizing-thin {
+    font-size: 13px;
+  }
+
+  .progress-text {
+    font-size: 20px;
+  }
 }
