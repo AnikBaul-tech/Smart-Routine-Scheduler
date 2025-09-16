@@ -40,3 +40,30 @@ function setProgress(percent) {
 
 // Example: Animate to 75%
 setTimeout(() => setProgress(50), 500);
+
+function setProgressAttendance(percent) {
+    const progressBar = document.getElementById("progress-bar");
+    const text = document.querySelector(".attendance-progress-text");
+    progressBar.style.width = percent + "%";
+
+    if (percent < 30) {
+        progressBar.style.background = "var(--red)";
+    } else {
+        progressBar.style.background = "var(--green)";
+    }
+
+    // Animate number
+    let current = 0;
+    const step = Math.max(1, Math.ceil(percent / 30));
+    const interval = setInterval(() => {
+        current += step;
+        if (current >= percent) {
+            current = percent; // clamp to final value
+            clearInterval(interval);
+        }
+        text.innerHTML = `${current}%<br>`;
+    }, 30);
+}
+
+// Example: change this value to test
+setTimeout(() => setProgressAttendance(70),800);  // try 10, 25, 70 etc

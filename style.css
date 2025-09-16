@@ -3,10 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --accent_nav: #2c3e50;
+  --accent_nav_hover: #34495e;
+  --nav_text: white;
+  --card_shadow: rgba(0,0,0,0.1);
+  --green: rgb(0, 145, 84);
+  --red: #e12e0e;
+  --smooth_red: orangered;
+  --classic_blue: rgb(7, 104, 104);
+  --inside_card_shadow: rgba(0,0,0,0.08);
+  --inside_card_shadow_hover: rgba(0,0,0,0.20);
+}
 html,body{
   height: 100%;
   width: 100%;
-  background: rgb(0, 145, 84);
+  background: var(--green);
 }
 body {
   margin: 0;
@@ -14,6 +26,36 @@ body {
   display: flex;
 }
 
+/* Texts inside the cards */
+.fsizing{
+  font-size: 16px;
+  font-weight: 700;
+}
+.focused-text{
+  font-size: 18px;
+  font-weight: 700;
+}
+.content-text-green{
+  color: var(--green);
+}
+.content-text-blue{
+  color: var(--accent_nav);
+}
+.content-text-blue_hover{
+  color: var(--accent_nav_hover);
+}
+.content-text-red{
+  color: var(--red);
+}
+.content-text-smooth_red{
+  color: var(--smooth_red);
+}
+.content-text-classic_blue{
+  color: var(--classic_blue);
+}
+/* Texts completed */
+
+/* Sidebar */
 .sidebar {
   height: 100vh; /* ensures full viewport height */
   display: flex;
@@ -23,8 +65,8 @@ body {
   padding: 100px 10px;
   position: fixed;
   width: 220px;
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--accent_nav);
+  color: var(--nav_text);
   gap: 20px;
 }
 .sidebar h2 {
@@ -48,17 +90,19 @@ body {
   padding: 10px 20px;
   margin-bottom: 2px;
   text-decoration: none;
-  color: white;
+  color: var(--nav_text);
   display: block;
   transition: background 0.3s;
 }
 .sidebar a:hover {
-  background-color: #34495e;
+  background-color: var(--accent_nav_hover);
 }
+/* Sidebar ends */
 
 .main-content {
   background-color: whitesmoke;
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
   width: calc(100% - 240px);
   margin: 0 20px 10px 240px;
   padding: 20px;
@@ -69,9 +113,9 @@ body {
   gap: 50px;
 }
 .card{
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--accent_nav);
   width: max-content;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px var(--card_shadow);
   max-height: max-content;
   padding: 10px 15px;
   max-width: 800px;
@@ -83,45 +127,16 @@ body {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: var(--accent_nav);
 }
 
 .card-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #34495e;
+  color: var(--accent_nav_hover);
 }
-.details{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-.semi_detail{
-  font-size: 18px;
-  font-weight: 700;
-}
-#session-year{
-  color: #e12e0e;
-}
-#semester-span{
-  color: orangered;
-}
-#sem{
-  color: #2c3e50;
-}
-#duration{
-  color: rgba(2, 156, 156, 0.573);
-}
-#subject_count{
-  color: rgb(0, 145, 84);
-}
-#duration{
-  color: rgb(7, 104, 104);
-}
- @media (max-width: 768px) {
+/* Media queries for the sidebar and main content section */
+@media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -138,7 +153,7 @@ body {
     top: 20px;
     left: 20px;
     font-size: 24px;
-    color: #2c3e50;
+    color: var(--accent_nav);
     cursor: pointer;
     z-index: 1100;
   }
@@ -148,6 +163,16 @@ body {
     margin-left: 0;
     padding: 20px;
   }
+}
+/* Session Details */
+/* details => sessional details organised */
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .progress-container {
@@ -169,7 +194,7 @@ svg {
 
 .progress-bar {
   fill: none;
-  stroke: #4caf50;
+  stroke: var(--green);
   stroke-width: 20;
   stroke-linecap: round;
   stroke-dasharray: 330; /* arc length */
@@ -187,6 +212,171 @@ svg {
   color: #333;
   text-align: center;
 }
-#sub-progress-text{
+/* Syllabus Completed text */
+#sub-progress-text{  
   font-size: 20px;
 }
+/* Session Details Completed */
+
+/* Doubts Section */
+.doubts{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.doubts a{
+  text-decoration: none;
+  color: var(--classic_blue);
+}
+/* Doubts Section completed */
+
+/* Subjects Section */
+.subjects-section {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.subject-card {
+  background-color: #b99fe8;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px var(--inside_card_shadow);
+  transition: transform 0.2s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px var(--inside_card_shadow_hover);
+}
+
+.subject-card h4 {
+  margin-bottom: 6px;
+}
+
+.subject-card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+/* Subject Section Completed */
+
+/* Attendance Section */
+.attendance-details{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.attendance_progress-container {
+  width: 80%;
+  height: 30px;
+  background: #eee;
+  border-radius: 20px;
+  position: relative;
+  margin: 30px auto;
+  overflow: hidden;
+  border: 1px solid var(--accent_nav);
+}
+
+.attendance_progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+  border: 1px solid var(--accent_nav_hover);
+}
+
+.attendance-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--nav_text);
+}
+
+/* Mark line at 30% */
+.threshold {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--red);
+}
+
+/* Attendance Section updated */
+/* Update Section */
+.update {
+  display: flex;
+  align-items: flex-end; /* Align dots to bottom of text */
+  gap: 8px;
+}
+
+/* three body dots */
+.update-text {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dots-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  width: max-content;
+  padding-bottom: 4px; /* slight nudge to align with text baseline */
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}
+/* Update Section Completed */

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Side Navbar</title>
-    <link rel="stylesheet" href="style.css" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
 <body>
@@ -48,10 +48,10 @@
   <div class="card" id="session-details">
     <h3 class="card-title">Session Details</h3>
     <div class="details">
-      <span>Session <span class="semi_detail" id="session-year">24-25</span></span>
-      <span>Time Span <span class="semi_detail" id="semester-span">Aug-Dec</span></span>
-      <span>Semester <span class="semi_detail" id="sem">3</span></span>
-      <span>Duration <span class="semi_detail" id="duration">5 months</span></span>
+      <span class="fsizing">Session <span class="focused-text content-text-red" id="session-year">24-25</span></span>
+      <span class="fsizing">Time Span <span class="focused-text content-text-smooth_red" id="semester-span">Aug-Dec</span></span>
+      <span class="fsizing">Semester <span class="focused-text content-text-blue" id="sem">3</span></span>
+      <span class="fsizing">Duration <span class="focused-text content-text-classic_blue" id="duration">5 months</span></span>
     </div>
     <div class="details">
       <div class="progress-container">
@@ -67,30 +67,85 @@
       </div>
     </div>
     <div class="details">
-      <span><span class="semi_detail" id="subject_count">5</span> Subjects</span>
-      <span><span class="semi_detail" id="duration">3</span> Classes Today</span>
+      <span class="fsizing"><span class="focused-text content-text-green" id="subject_count">5</span> Subjects</span>
+      <span class="fsizing"><span class="focused-text content-text-classic_blue" id="class_numbers">3</span> Classes Today</span>
     </div>
   </div>
 
   <div class="card">
     <h3 class="card-title">Ask your doubts</h3>
-    <div class="session-details1 box"></div>
+    <div class="doubts">
+      <a href="#" class="fsizing">How to submit subject related doubts ?</a>
+      <a href="#" class="fsizing">How to give feedback ?</a>
+      <a href="#" class="fsizing">Ask for extra Classes</a>
+    </div>
   </div>
 
   <div class="card">
     <h3 class="card-title">Subjects for this session</h3>
-    <div class="session-details2 box"></div>
+    <div class="subjects-section">
+      <h3 class="focused-text">Subjects for This Session</h3>
+      <div class="subjects-grid">
+        <div class="subject-card content-text-green">
+          <h4 class="fsizing">Mathematics</h4>
+          <p>Algebra, Calculus, Geometry</p>
+        </div>
+        <div class="subject-card content-text-blue">
+          <h4 class="fsizing">Physics</h4>
+          <p>Mechanics, Thermodynamics, Optics</p>
+        </div>
+        <div class="subject-card content-text-red">
+          <h4 class="fsizing">Chemistry</h4>
+          <p>Organic, Inorganic, Physical</p>
+        </div>
+        <div class="subject-card content-text-smooth_red">
+          <h4 class="fsizing">Biology</h4>
+          <p>Genetics, Ecology, Anatomy</p>
+        </div>
+        <div class="subject-card content-text-classic_blue">
+          <h4 class="fsizing">Computer Science</h4>
+          <p>Data Structures, Web Dev, Python</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="card">
     <h3 class="card-title">Attendance History</h3>
-    <div class="session-details3 box"></div>
+    <div class="attendance">
+      <div class="attendance-details">
+        <span class="fsizing">Total Working Days :- <span class="focused-text content-text-classic_blue" id="total_days">300</span></span>
+        <span class="fsizing">You have ateended :- <span class="focused-text content-text-green" id="attended_days">210</span></span>
+      </div>
+      <div class="attendance-details">
+        <div class="attendance_progress-container">
+          <div class="attendance_progress-bar" id="progress-bar"></div>
+          <div class="threshold"></div>
+          <div class="attendance-progress-text focused-text" id="progress-text">0%</div>
+        </div>
+      </div>
+      <div class="attendance-details">
+        <span class="focused-text content-text-blue">Attendance Percentage</span>
+      </div>
+    </div>
   </div>
 
   <div class="card">
     <h3 class="card-title">New Updates</h3>
-    <div class="session-details3 box"></div>
+    <div class="update">
+      <div class="update-text">
+        <span class="fsizing content-text-green">No New Updates</span>
+      </div>
+      <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </section>
+    </div>
   </div>
+
 </div>
 
   <script src="test.js"></script>
