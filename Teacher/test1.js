@@ -67,3 +67,42 @@ function setProgressAttendance(percent) {
 
 // Example: change this value to test
 setTimeout(() => setProgressAttendance(70),800);  // try 10, 25, 70 etc
+
+    const messages = [
+      {
+        name: "Shilpi Das",
+        dept: "CSE",
+        text: "Ma'am regarding the previous assignments I have some of the problems and so I want to meet you if you have any free time I can contact you please inform me Ma'am. If you will inform I will be thankful to you."
+      },
+      {
+        name: "Ravi Kumar",
+        dept: "ECE",
+        text: "Ma'am I missed the last lecture due to illness. Could you please share the notes or guide me on what topics were covered?"
+      },
+      {
+        name: "Ananya Roy",
+        dept: "IT",
+        text: "Ma'am I submitted the assignment but forgot to attach the code file. Can I resend it now?"
+      }
+    ];
+
+let index = 0;
+
+function updateMessage() {
+    const info = document.getElementById("studentInfo");
+    const text = document.getElementById("messageText");
+    info.innerHTML = `Message from ${messages[index].name}<br>From ${messages[index].dept}`;
+    text.textContent = messages[index].text;
+}
+
+function nextMessage() {
+    index = (index + 1) % messages.length;
+    updateMessage();
+}
+
+function prevMessage() {
+    index = (index - 1 + messages.length) % messages.length;
+    updateMessage();
+}
+
+updateMessage(); // Initial load
